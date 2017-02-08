@@ -10,10 +10,11 @@ namespace Repetition_Inheritance
     {
         
 
-        public DieselBil(string Mærke, double PrisExAfgift, int KøbsÅr, int KmPrLiter, int Tank, string RegistreringsNr, bool PartikkelFilter) : base(Mærke, PrisExAfgift, KøbsÅr, KmPrLiter, RegistreringsNr)
+        public DieselBil(string Mærke, double PrisExAfgift, int KøbsÅr, int KmPrLiter, int Tank, string RegistreringsNr, bool PartikkelFilter) : base(Mærke, PrisExAfgift, KøbsÅr, RegistreringsNr)
         {
             this.PartikkelFilter = PartikkelFilter;
             this.Tank = Tank;
+            this.KmPrLiter = KmPrLiter;
         }
         public DieselBil(string Mærke, double PrisExAfgift, int KøbsÅr, int KmPrLiter, int Tank, string RegistreringsNr)
            : this(Mærke, PrisExAfgift, KøbsÅr, KmPrLiter, Tank, RegistreringsNr, PartikkelFilter: true)

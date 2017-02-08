@@ -14,10 +14,10 @@ namespace Repetition_Inheritance
         public string RegistreringsNr { get; set; }
         public int KmPrLiter { get; set; }
 
-        public Bil(string Mærke, double PrisExAfgift,int KøbsÅr, int KmPrLiter, string RegistreringsNr)
+        public Bil(string Mærke, double PrisExAfgift,int KøbsÅr, string RegistreringsNr)
         {
             this.BilPrisExAfgift = PrisExAfgift;
-            this.KmPrLiter = KmPrLiter;
+            //this.KmPrLiter = KmPrLiter;
             this.KøbsÅr = KøbsÅr;
             this.Mærke = Mærke;
             this.RegistreringsNr = RegistreringsNr;
