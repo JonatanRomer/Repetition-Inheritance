@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repetition_Inheritance
 {
-    class ElBil : Bil
+    class ElBil : Bil, IMotor
     {
         public ElBil(string Mærke, double PrisExAfgift, int KøbsÅr, int KmPrKW, int BatteriKapacitet, string RegistreringsNr) : base(Mærke, PrisExAfgift, KøbsÅr, RegistreringsNr)
         {
@@ -57,6 +57,11 @@ namespace Repetition_Inheritance
         {
             int længde = BatteriKapacitet * KmPrKW;
             return længde;
+        }
+
+        public int LadeTid()
+        {
+            return 5;
         }
     }
 }

@@ -64,6 +64,47 @@ namespace Repetition_Inheritance
             biler.Add(new ElBil("Toyota", 150000, 2017, 5, 15, "9F4T"));
             biler.Add(new ElBil("cheveolet", 200000, 2017, 10, 23, "8Y5C"));
             biler.Add(new ElBil("Tesla", 700000, 2017, 10, 60, "7UP9"));
+
+            /*foreach (DieselBil bil in dieselBils)
+            {
+                Console.WriteLine("Bil Reg. nr. " + bil.RegistreringsNr + ": Koster i afgift " + bil.HalvÅrligEjerafgift() + ": Bilen's rækkevidde er " + bil.Rækkevidde());
+            }
+            foreach (BenzinBil bil in benzinBils)
+            {
+                Console.WriteLine("Bil Reg. nr. " + bil.RegistreringsNr + ": Bil mærke" + bil.Mærke + ": Prisen "
+                    + bil.BilPrisExAfgift + ": Købt i året " + bil.KøbsÅr + ": Km per liter " + bil.KmPrLiter +
+                    ": Koster i afgift " + bil.HalvÅrligEjerafgift() + ": Bilen's rækkevidde er " + bil.Rækkevidde());
+            }
+            foreach (ElBil bil in elBils)
+            {
+                Console.WriteLine("El bil Reg. nr. " + bil.RegistreringsNr + ": ER mærke: " + bil.Mærke + " Og koster: " + bil.BilPrisExAfgift + " og er fra " + bil.KøbsÅr + " og kører " + bil.KmPrKW + " km/KW og koster i afgift " + bil.HalvÅrligEjerafgift() + " Bilen har " + bil.BatteriKapacitet + "KW og kan køre " + bil.Rækkevidde() + " pr opladning");
+            }*/
+
+            foreach (IBil bilen in biler)
+            {
+                if (bilen is ElBil)
+                {
+                    ElBil ebil = bilen as ElBil; ;
+                    Console.WriteLine("El bil Reg. nr. " + ebil.RegistreringsNr + ": ER mærke: " + ebil.Mærke + " Og koster: " + ebil.BilPrisExAfgift + " og er fra " + ebil.KøbsÅr + " og kører " + ebil.KmPrKW + " km/KW og koster i afgift " + ebil.HalvÅrligEjerafgift() + " Bilen har " + ebil.BatteriKapacitet + "KW og kan køre " + ebil.Rækkevidde() + " pr opladning");
+                    if (bilen is IMotor)
+                    {
+                        Console.WriteLine(" Har Elmotor " + " Oplade tid = " + ebil.LadeTid());
+                    }
+                }
+            
+                if (bilen is DieselBil)
+                {
+                    DieselBil dbil = bilen as DieselBil;
+                    Console.WriteLine("Bil Reg. nr. " + dbil.RegistreringsNr + ": Koster i afgift " + dbil.HalvÅrligEjerafgift() + ": Bilen's rækkevidde er " + dbil.Rækkevidde());
+                }
+                if (bilen is BenzinBil)
+                {
+                    BenzinBil bbil = bilen as BenzinBil;
+                    Console.WriteLine("Bil Reg. nr. " + bbil.RegistreringsNr + ": Bil mærke" + bbil.Mærke + ": Prisen "
+                    + bbil.BilPrisExAfgift + ": Købt i året " + bbil.KøbsÅr + ": Km per liter " + bbil.KmPrLiter +
+                    ": Koster i afgift " + bbil.HalvÅrligEjerafgift() + ": Bilen's rækkevidde er " + bbil.Rækkevidde());
+                }
+            }
         }
     }
 }
